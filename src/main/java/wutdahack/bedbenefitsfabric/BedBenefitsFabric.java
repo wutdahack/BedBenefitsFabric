@@ -12,7 +12,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import wutdahack.bedbenefitsfabric.config.BBConfig;
-import wutdahack.bedbenefitsfabric.config.BBConfigGUI;
 
 import java.io.File;
 import java.io.FileReader;
