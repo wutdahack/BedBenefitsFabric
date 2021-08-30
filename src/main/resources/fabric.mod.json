@@ -1,38 +1,31 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "bedbenefitsfabric",
   "version": "${version}",
-
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Bed Benefits",
+  "description": "bed benefits (originally made by Darkhax) ported to fabric by wutdahack. adds some benefits to beds.",
   "authors": [
-    "Me!"
+    "wutdahack",
+    "Darkhax"
   ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
-
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
+  "license": "LGPL-2.1",
+  "icon": "assets/bedbenefitsfabric/icon.png",
   "environment": "*",
   "entrypoints": {
+    "modmenu": [
+      "wutdahack.bedbenefitsfabric.config.BBModMenu"
+    ],
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "wutdahack.bedbenefitsfabric.BedBenefitsFabric"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "bedbenefitsfabric.mixins.json"
   ],
-
   "depends": {
-    "fabricloader": ">=0.11.3",
-    "fabric": "*",
+    "fabricloader": ">=0.11.6",
+    "fabric": ">=0.39.2",
     "minecraft": "1.17.x",
     "java": ">=16"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

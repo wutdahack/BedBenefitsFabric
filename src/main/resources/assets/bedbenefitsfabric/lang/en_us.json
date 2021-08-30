@@ -1,0 +1,8 @@
+{
+  "text.config.bedbenefitsfabric.title": "Bed Benefits Config",
+  "text.config.bedbenefitsfabric.option.restoreHealth": "restore health",
+  "text.config.bedbenefitsfabric.option.restoreFullHealth": "restore full health",
+  "text.config.bedbenefitsfabric.option.healAmount": "restore health amount",
+  "text.config.bedbenefitsfabric.option.removeBadEffects": "remove bad effects",
+  "text.config.bedbenefitsfabric.option.removePositiveEffects": "remove positve effects"
+}
