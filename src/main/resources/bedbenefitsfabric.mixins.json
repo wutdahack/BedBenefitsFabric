@@ -2,9 +2,9 @@
   "required": true,
   "minVersion": "0.8",
   "package": "wutdahack.bedbenefitsfabric.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "PlayerEntityMixin"
+    "ServerPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -24,8 +24,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.11.6",
-    "fabric": ">=0.39.2",
-    "minecraft": "1.16.x",
-    "java": ">=16"
+    "fabric-entity-events-v1": ">=1.2.0",
+    "minecraft": "1.16.x"
   }
 }
