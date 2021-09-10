@@ -24,7 +24,7 @@ public class BedBenefitsFabric implements ModInitializer {
 
 	public static Logger LOGGER = LogManager.getFormatterLogger("bedbenefitsfabric");
 	public BBConfig config;
-    private static BedBenefitsFabric instance;
+	private static BedBenefitsFabric instance;
 
 	public static BedBenefitsFabric getInstance() {
 		return instance;
@@ -73,45 +73,38 @@ public class BedBenefitsFabric implements ModInitializer {
 		}
 	}
 
-
-
-
-
-    public void applyBenefits() {
+	public void applyBenefits() {
 		EntitySleepEvents.STOP_SLEEPING.register(
-				(
-						(entity, sleepingPos) -> {
+			(
+				(entity, sleepingPos) -> {
 
-							if (entity.world.isClient) {
-								return;
-							}
+					if (entity.world.isClient) {
+						return;
+					}
 
-							if (entity instanceof ServerPlayerEntity) {
+					if (entity instanceof ServerPlayerEntity) {
 
+						ServerPlayerEntity playerEntity = (ServerPlayerEntity) entity;
 
-								ServerPlayerEntity playerEntity = (ServerPlayerEntity) entity;
-
-								if (playerEntity.networkHandler == null) {
-									return;
-								}
-
-								if (this.config.shouldRestoreHealth()) {
-									if (this.config.shouldRestoreFullHealth()) {
-										playerEntity.heal(playerEntity.getMaxHealth() - playerEntity.getHealth());
-									} else {
-										playerEntity.heal(this.config.getHealAmount());
-									}
-								}
-
-								if (this.config.shouldClearBadEffects() || this.config.shouldClearGoodEffects()) {
-									this.clearEffects(playerEntity, this.config.shouldClearBadEffects(), this.config.shouldClearGoodEffects());
-								}
-							}
-
+						if (playerEntity.networkHandler == null) {
+							return;
 						}
-				)
-		);
 
+						if (this.config.shouldRestoreHealth()) {
+							if (this.config.shouldRestoreFullHealth()) {
+								playerEntity.heal(playerEntity.getMaxHealth() - playerEntity.getHealth());
+							} else {
+								playerEntity.heal(this.config.getHealAmount());
+							}
+						}
+
+						if (this.config.shouldClearBadEffects() || this.config.shouldClearGoodEffects()) {
+							this.clearEffects(playerEntity, this.config.shouldClearBadEffects(), this.config.shouldClearGoodEffects());
+						}
+					}
+				}
+			)
+		);
 	}
 
 	// taken from the bookshelf code in the bookshelf library
