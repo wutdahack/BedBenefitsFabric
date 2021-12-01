@@ -23,9 +23,9 @@
     "bedbenefitsfabric.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.6",
+    "fabricloader": ">=0.12.0",
     "fabric-entity-events-v1": ">=1.2.0",
-    "minecraft": "1.17.x",
-    "java": ">=16"
+    "minecraft": "1.18.x",
+    "java": ">=17"
   }
 }

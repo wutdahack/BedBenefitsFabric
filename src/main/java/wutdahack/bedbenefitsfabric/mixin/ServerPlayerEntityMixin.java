@@ -18,7 +18,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
 		super(world, pos, yaw, profile);
 	}
 
-	@Inject(method = "wakeUp(ZZ)V", cancellable = true, at = @At(value = "INVOKE"))
+	@Inject(method = "wakeUp(ZZ)V", at = @At(value = "INVOKE"))
 	private void onWakeUp(boolean bl, boolean updateSleepingPlayers, CallbackInfo info) {
 		EntitySleepEvents.STOP_SLEEPING.invoker().onStopSleeping((ServerPlayerEntity)(Object) this, this.getBlockPos());
 	}
